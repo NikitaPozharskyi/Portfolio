@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Portfolio of Nikita Pozharskyi, an EPFL distributed systems student and backend engineer working across C#, Go, and C++."
+  >
+  <title>Nikita Pozharskyi | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav">
+          <a class="brand" href="#top">Nikita</a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            aria-label="Open navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+          <div class="nav-menu" id="nav-menu">
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Portfolio</p>
+            <h1>Nikita Pozharskyi</h1>
+            <p class="hero-lead">Distributed systems student and backend engineer.</p>
+            <p class="hero-text">
+              I am an EPFL computer science master's student specializing in distributed systems,
+              with 3+ years of production experience in .NET. My work spans distributed backend
+              services, workflow infrastructure, peer-to-peer systems, and current research on
+              distributed OLAP execution.
+            </p>
+            <div class="hero-facts" aria-label="Quick profile facts">
+              <span>EPFL MSc</span>
+              <span>3+ years in .NET</span>
+              <span>C# / Go / C++</span>
+            </div>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">View Projects</a>
+              <a class="button button-secondary" href="#experience">
+                Experience
+              </a>
+              <a class="button button-ghost" href="https://github.com/NikitaPozharskyi" target="_blank" rel="noreferrer">
+                GitHub Profile
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-panel reveal" aria-label="Profile summary">
+            <div class="profile-card">
+              <p class="profile-label">Profile</p>
+              <h2>At a glance</h2>
+              <p>
+                Based in Switzerland. Previously built distributed backend services in C# at DataArt;
+                currently focused on distributed systems research and systems-heavy coursework at EPFL.
+              </p>
+            </div>
+            <div class="stats-grid">
+              <article class="stat-card">
+                <span>3+ years</span>
+                <p>production backend engineering in .NET</p>
+              </article>
+              <article class="stat-card">
+                <span>EPFL MSc</span>
+                <p>specialization in distributed systems</p>
+              </article>
+              <article class="stat-card">
+                <span>2,300+</span>
+                <p>NuGet downloads on CommandFlowEngine</p>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="projects">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Selected Work</p>
+            <h2>Public work that best represents my backend and distributed systems profile.</h2>
+            <p>
+              The strongest pattern across these projects is systems behavior: workflow orchestration,
+              validation logic, message propagation, reliability, and protocol implementation.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card reveal">
+              <div class="project-topline">
+                <p class="project-index">01</p>
+                <span class="project-language">C#</span>
+              </div>
+              <h3>CommandFlowEngine</h3>
+              <p class="project-summary">
+                A deterministic .NET request-processing engine for asynchronous, stateful command workflows.
+                It maps incoming messages to commands, queues workflow steps, and resumes execution across later input.
+              </p>
+              <ul class="project-points">
+                <li>Designed explicit abstractions for ordered command and workflow execution.</li>
+                <li>Keeps per-user progress through command history and resumable state.</li>
+                <li>Published as an open-source library with tests, sample app, and real NuGet usage.</li>
+              </ul>
+              <div class="tag-row">
+                <span>.NET</span>
+                <span>Workflow Engine</span>
+                <span>State Management</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/NikitaPozharskyi/CommandFlowEngine" target="_blank" rel="noreferrer">Repository</a>
+                <a href="https://www.nuget.org/packages/CommandFlowEngine" target="_blank" rel="noreferrer">NuGet Package</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-topline">
+                <p class="project-index">02</p>
+                <span class="project-language">Go</span>
+              </div>
+              <h3>NameCoin Backend Snapshot</h3>
+              <p class="project-summary">
+                A contribution-focused backend snapshot from an EPFL decentralized systems project,
+                rebuilt to show the architecture and core logic I was responsible for.
+              </p>
+              <ul class="project-points">
+                <li>Implements transaction validation, deterministic UTXO handling, and state transitions.</li>
+                <li>Covers block application, fork-aware chain management, and longer-chain resolution.</li>
+                <li>Includes architecture notes and diagrams instead of dumping the full private coursework repo.</li>
+              </ul>
+              <div class="tag-row">
+                <span>Blockchain Logic</span>
+                <span>UTXO</span>
+                <span>Fork Handling</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/NikitaPozharskyi/namecoin-backend-snapshot-2026" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-topline">
+                <p class="project-index">03</p>
+                <span class="project-language">Go</span>
+              </div>
+              <h3>rumor-net-go</h3>
+              <p class="project-summary">
+                A Go peer-to-peer systems snapshot covering UDP transport, routing, rumor propagation,
+                anti-entropy synchronization, file sharing, and consensus-oriented naming logic.
+              </p>
+              <ul class="project-points">
+                <li>Built around peer lifecycle management, packet handling primitives, and network coordination.</li>
+                <li>Includes rumor dissemination, synchronization flows, and chunk-based data sharing.</li>
+                <li>Preserves the implementation-heavy parts of the work, including concurrency debugging in Go.</li>
+              </ul>
+              <div class="tag-row">
+                <span>P2P Systems</span>
+                <span>UDP</span>
+                <span>Concurrency</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/NikitaPozharskyi/rumor-net-go-2026" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-topline">
+                <p class="project-index">04</p>
+                <span class="project-language">C++</span>
+              </div>
+              <h3>Distributed Algorithms Project</h3>
+              <p class="project-summary">
+                A C++ EPFL project structured by milestone branches for Perfect Links, Uniform Reliable Broadcast
+                with FIFO ordering, and Lattice Agreement.
+              </p>
+              <ul class="project-points">
+                <li>Implements reliability, delivery tracking, rebroadcast logic, and proposal-round handling.</li>
+                <li>Keeps milestones separated by algorithmic focus instead of flattening everything into one code path.</li>
+                <li>Centers on the networking and protocol implementation work inside the C++ core.</li>
+              </ul>
+              <div class="tag-row">
+                <span>Distributed Algorithms</span>
+                <span>Reliable Broadcast</span>
+                <span>Lattice Agreement</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/NikitaPozharskyi/epfl-distributed-algorithms-2026" target="_blank" rel="noreferrer">Repository</a>
+                <a href="https://github.com/NikitaPozharskyi/epfl-distributed-algorithms-2026/tree/Milestone-3" target="_blank" rel="noreferrer">Milestone 3</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Experience</p>
+            <h2>Research, industry work, and academic systems projects reinforce the same core strengths.</h2>
+            <p>
+              The portfolio makes more sense with context: production backend work at DataArt,
+              current distributed systems research at EPFL, and a consistent focus on reliability,
+              execution behavior, and architecture under real constraints.
+            </p>
+          </div>
+
+          <div class="experience-grid">
+            <article class="experience-card reveal">
+              <p class="card-label">Research</p>
+              <h3>EPFL distributed OLAP systems project</h3>
+              <p>
+                I am currently working on query planning and execution optimizations for cloud-native
+                distributed OLAP workloads, studying trade-offs around consistency, availability,
+                adaptive processing, and TPC-H-driven evaluation.
+              </p>
+            </article>
+
+            <article class="experience-card reveal">
+              <p class="card-label">Industry</p>
+              <h3>DataArt, .NET software engineer</h3>
+              <p>
+                Designed and maintained distributed backend services and internal engineering tools in C#,
+                improved high-throughput ETL performance by 25 percent, and worked with PostgreSQL,
+                MongoDB, RabbitMQ, Redis, and Microsoft Orleans under production SLA constraints.
+              </p>
+            </article>
+
+            <article class="experience-card reveal">
+              <p class="card-label">Stack</p>
+              <h3>Languages and systems tooling</h3>
+              <p>
+                Core tools across my CV and projects include C#, Go, C++, Java, Scala, Python,
+                ASP.NET Core, Docker, Kubernetes, Terraform, PostgreSQL, MongoDB, Redis, RabbitMQ,
+                OpenTelemetry, Prometheus, and Grafana.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container contact-panel reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Interested in backend or distributed systems work?</h2>
+          <p>
+            The easiest way to reach me or review more code is through GitHub and email.
+          </p>
+          <div class="contact-links">
+            <a class="button button-primary" href="mailto:nikita.pozharskyi@epfl.ch">nikita.pozharskyi@epfl.ch</a>
+            <a class="button button-secondary" href="https://github.com/NikitaPozharskyi" target="_blank" rel="noreferrer">
+              github.com/NikitaPozharskyi
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Nikita Pozharskyi</p>
+        <p>Single-page portfolio built for straightforward deployment.</p>
+        <p>&copy; <span id="year"></span></p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
