@@ -14,8 +14,28 @@ const setHeaderState = () => {
   header?.classList.toggle("scrolled", window.scrollY > 12);
 };
 
+const updateActiveNav = () => {
+  const headerOffset = header?.offsetHeight ?? 0;
+  const scrollMarker = window.scrollY + headerOffset + 120;
+  let activeId = "";
+
+  sections.forEach((section) => {
+    if (scrollMarker >= section.offsetTop) {
+      activeId = section.id;
+    }
+  });
+
+  navLinks.forEach((link) => {
+    const isActive = activeId !== "" && link.getAttribute("href") === `#${activeId}`;
+    link.classList.toggle("is-active", isActive);
+  });
+};
+
 setHeaderState();
+updateActiveNav();
 window.addEventListener("scroll", setHeaderState, { passive: true });
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+window.addEventListener("resize", updateActiveNav);
 
 if (navToggle && navMenu) {
   const closeMenu = () => {
@@ -38,28 +58,6 @@ if (navToggle && navMenu) {
     }
   });
 }
-
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-      const activeId = entry.target.getAttribute("id");
-      navLinks.forEach((link) => {
-        const isActive = link.getAttribute("href") === `#${activeId}`;
-        link.classList.toggle("is-active", isActive);
-      });
-    });
-  },
-  {
-    threshold: 0.45,
-    rootMargin: "-15% 0px -35% 0px",
-  },
-);
-
-sections.forEach((section) => sectionObserver.observe(section));
 
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
